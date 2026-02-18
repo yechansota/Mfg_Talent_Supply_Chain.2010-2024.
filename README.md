@@ -10,17 +10,6 @@ Manufacturing Talent Supply Chain at Risk: A 15-Year Empirical Analysis of the E
 📋 Overview
 This project analyzes the structural collapse of the manufacturing workforce pipeline in the U.S. Energy Belt region. Using federal government data (Census J2J, IPEDS, BLS), we decompose workforce attrition into five interconnected risk layers and provide actionable insights for HR practitioners.
 
-Key Questions Addressed
-How fast is the workforce depleting due to aging?
-Why are workers leaving beyond natural retirement?
-Can we replace those who leave?
-Can we effectively train new hires?
-Are other industries stealing our talent?
-
-**Framework: 5-Layer Risk Model**
-┌─────────────────────────────────────────────────────────────┐
-│           TALENT SUPPLY CHAIN RISK MODEL                    │
-└─────────────────────────────────────────────────────────────┘
 
 Layer 1: AGING RISK          → How fast is workforce depleting?
          ↓                       λ = 4.4%/yr, Half-Life = 15.8yr
