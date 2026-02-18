@@ -1,9 +1,10 @@
+<p align="center">
 # Manufacturing-Talent-Supply-Chain-at-Risk
+  </p>
 Manufacturing Talent Supply Chain at Risk: A 15-Year Empirical Analysis of the Energy Belt (2010–2024)
-Manufacturing Talent Supply Chain Risk Analysis
 <p align="center">
   <b>Quantitative Diagnosis of Workforce Attrition Using Multi-Layer Risk Framework</b><br>
-  <i>Energy Belt Region: Alabama | Georgia | North Carolina | South Carolina | Tennessee</i>
+  <i>Energy Belt Region: AL | GA | NC | SC | TN </i>
 </p>
 
 📋 Overview
