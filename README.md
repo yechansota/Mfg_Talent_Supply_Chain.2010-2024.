@@ -84,14 +84,12 @@ The analysis compares the "Origin" (2010 share of worker flows) to the "Destinat
 
 ---
 
+### **Consideration**
 **Geographic and Sectoral Aggregation**
 The use of state-level Job-to-Job Flows (J2J) data necessitates a degree of generalization. By treating the five-state Energy Belt as a single economic unit, the model overlooks localized variations. Significant differences exist between dense, high-tech automotive corridors and rural industrial counties, which may experience demographic pressures differently.
-
 **The COVID-19 Distortion**
 The pandemic period (2020–2021) created unique anomalies across all metrics. Initial lockdowns suppressed job-switching and delayed retirements, while 2022–2023 saw a "catch-up" surge in both areas. To maintain transparency, these years are highlighted in red across all visualizations. Because these years temporarily slowed the downward trend of the Replacement Ratio, the 2037 "sustainability threshold" is likely a conservative estimate; the actual breaking point could arrive sooner if the pandemic's stabilizing effect is removed from the regression.
-
 **Simulation Parameters and Stress Testing**
 The Layer 4 simulation is a worst-case stress test, not a definitive forecast. It uses specific coefficients—such as the 0.5 mentoring quality multiplier and a 35% cap on junior attrition—to model how the system behaves under extreme stress. These parameters are designed to identify where the "revolving door" effect becomes catastrophic. Actual outcomes will fluctuate based on the timing and intensity of regional policy responses.
-
 **Representative Proxy Modeling**
 The reliance on Georgia as a proxy for the entire Energy Belt in Layer 5 is a methodological choice based on its status as the region's largest manufacturing employer. While Georgia's diverse industrial mix (automotive, aerospace, food processing) makes it an excellent representative for Alabama or North Carolina, its specific status as a massive logistics hub (centered in Atlanta) may slightly overstate the competitive growth of the Logistics sector compared to more rural parts of the region.
