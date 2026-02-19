@@ -376,7 +376,7 @@ def plot_layer3_retention():
         
         ax.text(i, t + 0.3, f'{t:.1f}%', 
                 ha='center', fontweight='bold', 
-                color='black', fontsize=11)
+                color='black', fontsize=13)
     
     ax.text(0.02, 0.98,
             f'Manufacturing 2020-2024:\n'
@@ -391,7 +391,7 @@ def plot_layer3_retention():
             f'(1.2M × {structural_gaps[0]:.1f}%)\n'
             f'leave due to fixable\n'
             f'workplace factors',
-            transform=ax.transAxes, fontsize=9, color='gray',
+            transform=ax.transAxes, fontsize=11, color='gray',
             verticalalignment='top', horizontalalignment='left',
             bbox=dict(boxstyle='round', facecolor='white', 
                       alpha=0.9, edgecolor='gray'),
@@ -404,7 +404,7 @@ def plot_layer3_retention():
     ax.set_xticks(x)
     ax.set_xticklabels(industries, fontsize=11)
     ax.set_ylabel('Annual Separation Rate (%)', fontsize=11)
-    ax.set_ylim(0, 14)
+    ax.set_ylim(0, 22)
     ax.grid(axis='y', alpha=0.3)
     
     ax.text(0.98, 0.02, 
@@ -536,11 +536,11 @@ def plot_layer4_accelerated_collapse(flow_df=None):
                      color='gray', style='italic')
         
         ax1.plot(years, junior_bau, 
-                 color=COLORS['Manufacturing'], linewidth=2.5,
-                 label='BAU (No Intervention)', linestyle='-', zorder=3)
+                 color=COLORS['Manufacturing'], linewidth=2.2,
+                 label='BAU (No Intervention)', linestyle='--', zorder=3)
         
         ax1.plot(years, junior_combined, 
-                 color='#27ae60', linewidth=2,
+                 color='#7f8c8d', linewidth=2,
                  label='Combined (Phased + Mentor)', linestyle='--', zorder=4)
         
         ax1.fill_between(years, junior_bau, 0, 
@@ -548,10 +548,10 @@ def plot_layer4_accelerated_collapse(flow_df=None):
                          alpha=0.10, label='_nolegend_', zorder=1)
         
         ax1.fill_between(years, junior_combined, junior_bau, 
-                         color='#27ae60', alpha=0.15, 
+                         color='#bdc3c7', alpha=0.3, 
                          label='Prevented Collapse', zorder=2)
         
-        ax1.text(years[-1] - 0.1, final_bau, 
+        ax1.text(years[-1], final_bau + 3.5, 
                  f'{final_bau:.0f}%', 
                  ha='right', va='bottom', fontsize=10, 
                  fontweight='bold', color=COLORS['Manufacturing'])
@@ -559,7 +559,7 @@ def plot_layer4_accelerated_collapse(flow_df=None):
         ax1.text(years[-1] - 0.1, final_combined, 
                  f'{final_combined:.0f}%\n({improvement_factor:.2f}x)', 
                  ha='right', va='bottom', fontsize=10, 
-                 fontweight='bold', color='#27ae60')
+                 fontweight='bold', color='#7f8c8d')
         
         ax1.axhline(50, color='red', linestyle=':', linewidth=1, alpha=0.4)
         ax1.text(BASE_YEAR + 0.2, 52, 'Critical (50%)',
@@ -585,7 +585,7 @@ def plot_layer4_accelerated_collapse(flow_df=None):
                       fontsize=12, fontweight='bold')
         ax1.set_ylabel('Workforce Index (%)', fontsize=10)
         ax1.set_xlabel('Year', fontsize=10)
-        ax1.set_ylim(0, max(120, junior_init * 1.1))
+        ax1.set_ylim(0, max(170, junior_init * 1.1))
         ax1.legend(loc='upper right', fontsize=9)
         ax1.grid(axis='y', alpha=0.3)
         
@@ -594,11 +594,11 @@ def plot_layer4_accelerated_collapse(flow_df=None):
                  linewidth=2.3, label='BAU', linestyle='-')
         
         ax2.plot(years, senior_combined, 
-                 color='#27ae60', linewidth=1.8, 
+                 color='#7f8c8d', linewidth=1.8, 
                  label='Phased Retirement (-20%)', linestyle='--')
         
         ax2.fill_between(years, senior_bau, senior_combined, 
-                         color='#27ae60', alpha=0.2, 
+                         color='#7f8c8d', alpha=0.2, 
                          label='Retained Experience')
         
         ax2.set_title('Senior Workforce Index (2024=100)', 
@@ -671,7 +671,7 @@ def plot_layer5_competition():
         ax.text(dest + 1.5, i, f'{dest:.1f}%', va='center', ha='left', color='black', fontsize=10, fontweight='bold')
         ax.text(0, i, sectors[i], ha='center', va='center', fontweight='bold', fontsize=11,
                 bbox=dict(boxstyle='round,pad=0.3', facecolor='white', edgecolor='gray', alpha=0.9))
-        nf_color = 'green' if nf > 0 else 'red'
+        nf_color = 'gray' if nf > 0 else 'red'
         ax.text(0, i - 0.38, f'Delta {nf:+.1f}%', ha='center', fontsize=10,
                 color=nf_color, style='italic', fontweight='bold')
     
@@ -757,10 +757,6 @@ LAYER 2: YOUTH INFLOW — POSITIVE NOW, DETERIORATING
 
 LAYER 3: RETENTION FAILURE (CORRECTED)
   Source: Census QWI (2020-2024) + BLS JOLTS
-  • Manufacturing separation rate: 11.0%
-    BREAKDOWN:
-    - Natural retirement: 6.6% (unavoidable)
-    - Baseline churn: 2.4% (market)
     - Structural gap: {structural_gap:.1f}%p (PREVENTABLE)
   • Preventable: {preventable_pct:.1f}% of total (NOT 60%)
   • Annual impact: ~24,000 workers leave due to fixable factors
