@@ -22,7 +22,7 @@ First, the Energy Belt’s senior manufacturing workforce is exiting at an accel
 
 ## **The 5-Layer Risk Framework: Deep Dive**
 
-<img width="2084" height="884" alt="layer1_aging" src="https://github.com/user-attachments/assets/afe5233a-9e25-4058-8d85-57a20f7291f7" />
+<img width="2084" height="884" alt="layer1_aging" src="https://github.com/user-attachments/assets/9b29b1b2-7cb3-48e5-93f3-1dbdefae6492" />
 
 ### **Layer 1: Aging Risk — The Structural Certainty of Demographic Exit**
 **The most certain element of this analysis is not a forecast, but simple arithmetic:** the Energy Belt’s senior manufacturing workforce is aging out faster than it can be replaced. According to Bureau of Labor Statistics (BLS) data, the historical "natural" separation rate for manufacturing—driven by unavoidable factors like retirement and health—has averaged **4.4%** annually. This represents the baseline velocity of labor loss that no employer policy can fully prevent.
@@ -35,7 +35,7 @@ The transition from a 4.4% to a 6.6% exit rate is non-linear. After one year, th
 
 ---
 
-<img width="2381" height="906" alt="layer2_youth_inflow" src="https://github.com/user-attachments/assets/81d86101-a118-4009-93e0-1434597dda2b" />
+<img width="2381" height="906" alt="layer2_youth_inflow" src="https://github.com/user-attachments/assets/5357e312-0bd9-4d4a-b11c-71e6b72a8cd6" />
 
 ### **Layer 2: Youth Inflow — Currently Positive, But Rapidly Deteriorating**
 Youth recruitment—specifically workers aged 25–34—has seen a massive surge. In 2010, roughly 67,000 young workers entered the industry; by 2024, that number doubled to approximately 130,000. This 100% increase reflects the success of regional workforce development and the economic appeal of the Southeast. However, absolute growth is only half the story. To understand long-term sustainability, we must look at the **Replacement Ratio (RR)**: the number of young workers entering for every senior worker (aged 55+) who leaves.
@@ -47,7 +47,7 @@ If this linear decline continues, the Energy Belt will hit a critical breaking p
 
 ---
 
-<img width="1784" height="1034" alt="layer3_retention" src="https://github.com/user-attachments/assets/854ca4e2-694d-40e0-b53b-72ac53834034" />
+<img width="1784" height="1184" alt="layer3_retention" src="https://github.com/user-attachments/assets/afbeb42c-8f31-40a5-9fee-036599408347" />
 
 ### **Layer 3: Retention Failure — Even New Hires Are Leaving**
 Layer 3 data reveals that the Energy Belt’s manufacturing sector suffers from an **11.0% annual separation rate**. This means approximately one in nine workers leaves the industry every year—the highest turnover rate among all major regional peer sectors.
@@ -59,7 +59,7 @@ To solve the problem, we must distinguish between what is inevitable and what is
 
 ---
 
-<img width="2384" height="907" alt="layer4_collapse" src="https://github.com/user-attachments/assets/30b82718-7746-467b-8317-719159b1761a" />
+<img width="2384" height="907" alt="layer4_collapse" src="https://github.com/user-attachments/assets/b3ed8404-abaa-46c9-bb27-696b5cba8755" />
 
 ### **Layer 4: Accelerated Collapse — The Negative Feedback Loop Simulation**
 Layer 4 utilizes a Stock-Flow Simulation from 2024 to 2035. This model treats the workforce as a reservoir that is currently leaking faster than it is being refilled.
@@ -71,7 +71,7 @@ These numbers bound the range of plausible futures:The No-Intervention case illu
 
 ---
 
-<img width="1785" height="1035" alt="layer5_competition" src="https://github.com/user-attachments/assets/0162eed0-8955-41b8-8240-ae8fa2c113eb" />
+<img width="1785" height="1035" alt="layer5_competition" src="https://github.com/user-attachments/assets/2bc2317b-557f-4a77-aee1-3f3344326e30" />
 
 ### **Layer 5: External Competition — Mapping the Sectoral Shift**
 Layer 5 analyzes worker flow patterns in the Energy Belt's largest manufacturing employer—to determine which sectors are successfully poaching talent and why.
