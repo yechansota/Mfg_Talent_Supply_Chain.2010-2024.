@@ -12,28 +12,34 @@ Today, I have revisited this challenge from a Macro-HR perspective: Talent Suppl
 
 ## **The 5-Layer Risk Framework: Deep Dive**
 
-<img width="2084" height="884" alt="layer1_aging" src="https://github.com/user-attachments/assets/80b0effa-86ba-4e2f-8d38-547af60f8e62" />
+<img width="2084" height="884" alt="layer1_aging" src="https://github.com/user-attachments/assets/afe5233a-9e25-4058-8d85-57a20f7291f7" />
 
 ### **Layer 1: Aging Risk — The Structural Certainty of Demographic Exit**
 The most certain element of this analysis is the demographic "arithmetic" of the aging workforce. While the historical natural separation rate averages 4.4% per year , the Baby Boomer cohort crossing age 55 has accelerated this velocity to 6.6%. Compounded over a decade, this represents the difference between retaining 61% of the workforce versus only 48.7% by 2035. For a region employing 1.2 million manufacturing workers, this acceleration translates to roughly 150,000 experienced workers exiting sooner than baseline projections would suggest. The analysis identifies a 'critical mass' threshold where the senior workforce is reduced by half; under the accelerated scenario, the Energy Belt crosses this line in late 2034.
 
-
-<img width="2381" height="906" alt="layer2_youth_inflow" src="https://github.com/user-attachments/assets/97ba710c-8235-45f4-8b5f-91740f689ca1" />
+---
+<img width="2381" height="906" alt="layer2_youth_inflow" src="https://github.com/user-attachments/assets/81d86101-a118-4009-93e0-1434597dda2b" />
 
 ### **Layer 2: Youth Inflow — Currently Positive, But Rapidly Deteriorating**
 Absolute youth inflow (ages 25–34) into manufacturing doubled from 45,000 in 2010 to 91,000 in 2024 , reflecting successful regional development. However, the Replacement Ratio (RR)—junior entrants per senior exit—is the true measure of sustainability. Linear regression on the 15-year series reveals a statistically powerful downward trend with a slope of −0.12 per year (p < 0.001, R² = 0.89). Although the 2024 RR stands at 2.58 , the ratio is being outpaced by the tripling of senior exits. If this trend holds, the industry will fall below the critical sustainability threshold of 1.0 by approximately 2037, making headcount contraction mathematically inevitable.
 
-<img width="1484" height="1184" alt="layer3_retention" src="https://github.com/user-attachments/assets/39f018d2-9d9c-4ec2-9e94-9008e055a480" />
+---
+
+<img width="1784" height="1034" alt="layer3_retention" src="https://github.com/user-attachments/assets/854ca4e2-694d-40e0-b53b-72ac53834034" />
 
 ### **Layer 3: Retention Failure — Even New Hires Are Leaving**
 Attracting talent is futile if workers do not stay to build institutional knowledge. Energy Belt manufacturing carries an annual separation rate of 11.0% , the highest among comparable sectors like Logistics (8.5%) or Construction (7.2%). By decomposing this attrition, we find that 6.6 percentage points of the loss are "structural"—separations driven by preventable factors such as compensation gaps, lack of shift predictability, and poor mentoring. This structural gap is the largest in the peer set, meaning roughly 60% of all manufacturing departures are theoretically preventable. While the high RR in Layer 2 looks strong, when paired with 11% churn, it creates a "revolving door" effect.
 
-<img width="2384" height="907" alt="layer4_collapse" src="https://github.com/user-attachments/assets/be840b57-c210-495b-88aa-2e79eedbdd65" />
+---
+
+<img width="2384" height="907" alt="layer4_collapse" src="https://github.com/user-attachments/assets/30b82718-7746-467b-8317-719159b1761a" />
 
 ### **Layer 4: Accelerated Collapse — The Negative Feedback Loop Simulation**
 Layers 1 through 3 interact to create a self-reinforcing collapse mechanism. This layer utilizes a discrete-time stock-flow simulation (2024–2035) to quantify the Interaction Effect: as senior workers exit , the mentoring quality degrades , which in turn causes junior attrition to spike further. In a "No Intervention" worst-case scenario, the junior workforce index could plummet by 96% by 2035. However, the simulation proves that stabilizer policies—such as phased retirement to slow senior exits by 20% and mentoring programs to cut junior attrition by 50%—can improve the 2035 outcome by 319%, effectively breaking the vicious cycle.
 
-<img width="1785" height="1035" alt="layer5_competition" src="https://github.com/user-attachments/assets/30982dcc-b34a-4109-b1e7-8a835491ae09" />
+---
+
+<img width="1785" height="1035" alt="layer5_competition" src="https://github.com/user-attachments/assets/0162eed0-8955-41b8-8240-ae8fa2c113eb" />
 
 ### **Layer 5: External Competition — Mapping the Sectoral Shift**
 Manufacturing is losing a direct competitive battle for the regional labor pool. Using Markov transition analysis for Georgia as a representative proxy , we find that manufacturing's share of regional worker flows declined by 3.1 percentage points over 14 years. The primary victor is the Logistics sector, which gained 5.3 percentage points. Workers are migrating to Logistics not necessarily for higher wages, but for better non-wage employment experiences: predictable fixed shifts, heavy investment in ergonomic safety, and transparent career progression ladders.
