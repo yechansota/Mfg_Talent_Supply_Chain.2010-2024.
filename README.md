@@ -73,7 +73,7 @@ Current data for the Southeast manufacturing sector shows an effective annual se
 
 Youth recruitment—specifically workers aged 25–34—has seen a massive surge. In 2010, roughly 67,000 young workers entered the industry; by 2024, that number doubled to approximately 130,000. This 100% increase reflects the success of regional workforce development and the economic appeal of the Southeast. However, absolute growth is only half the story. To understand long-term sustainability, we must look at the **Replacement Ratio (RR)**: the number of young workers entering for every senior worker (aged 55+) who leaves.
 
-'2010 RR: ~4.3  |  2024 RR: 2.57 | Annual Decline: ~0.12 points per year'
+$$'2010 RR: ~4.3  |  2024 RR: 2.57 | Annual Decline: ~0.12 points  per  year'$$
 
 Statistical analysis (R-squared of 0.89) confirms this is a highly consistent, near-deterministic trend. The industry is effectively losing ground in the race against time. While youth recruitment has doubled, senior exits have tripled over the same period. The "pipeline" isn't broken, but it is being vastly outpaced by the demographic exit of the Baby Boomer generation. If this linear decline continues, the Energy Belt will hit a critical breaking point by 2037. At that stage, the RR will drop below 1.0, meaning more experienced workers will leave than young workers arrive. Without a major shift in policy or recruitment intensity, mathematical headcount contraction becomes inevitable.
 
