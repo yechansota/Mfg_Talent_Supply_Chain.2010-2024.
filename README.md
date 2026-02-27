@@ -6,6 +6,7 @@
 </p>
 
 **Analytical Architecture**
+
 To transform 15 years of fragmented federal data into a predictive model, I developed a Five-Layer Diagnostic Framework. This methodology moves beyond traditional static reporting by applying System Dynamics and Predictive Analytics to the regional talent supply chain.
 **Data Synthesis**: Integrated 2010–2024 records from the U.S. Census Bureau (J2J/QWI), BLS, and IPEDS.
 **Modeling Approach**: Combines Exponential Decay (Demographics), Supply-Demand Gap Analysis (Education), and Stock-Flow Simulation (Knowledge Transfer).
