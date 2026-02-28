@@ -129,5 +129,17 @@ The pandemic period (2020–2021) created unique anomalies across all metrics. I
 **Simulation Parameters and Stress Testing**
 The Layer 4 simulation is a worst-case stress test, not a definitive forecast. It uses specific coefficients—such as the 0.5 mentoring quality multiplier and a 35% cap on junior attrition—to model how the system behaves under extreme stress. These parameters are designed to identify where the "revolving door" effect becomes catastrophic. Actual outcomes will fluctuate based on the timing and intensity of regional policy responses.
 
+### **Future Work: Expanding the Diagnostic Framework**
+To build upon the foundational Five-Layer Risk Model and transition from a macro-level diagnosis to targeted, actionable interventions, future research will focus on the following key areas:
+
+**Occupational Segmentation via SOC Codes:**
+The current model evaluates the manufacturing sector at an aggregate industry level. Future iterations will disaggregate the data using Standard Occupational Classification (SOC) codes to isolate specific vulnerabilities. By comparing production-floor roles (e.g., SOC 51-xxxx) against administrative or technical roles (e.g., SOC 43-xxxx), we can identify occupation-specific attrition drivers and tailor intervention points with greater precision.
+
+**Real-Time Dashboard with Early Warning System:**
+To move beyond static historical analysis, we aim to develop a dynamic, real-time workforce analytics dashboard. This system will provide monthly updates on the Replacement Ratio (RR) and incorporate automated configurable alerts for exceptions or critical threshold breaches. By highlighting outliers and predictive signals (e.g., flight-risk forecasts), this early warning system will empower HR leaders to proactively address localized talent leaks before they compound into systemic failures.
+
+**Causal Inference for Policy Evaluation:**
+While the current Layer 4 simulation models the potential impact of interventions (e.g., phased retirement), future work will employ causal inference methods alongside A/B testing to empirically evaluate the effectiveness of newly implemented retention policies. This methodological shift will allow us to move beyond observing basic outcomes ("Did this work?") toward understanding the underlying mechanics ("What caused it?", "For whom did it work?", and "Why?").
+
 **Representative Proxy Modeling**
 The reliance on Georgia as a proxy for the entire Energy Belt in Layer 5 is a methodological choice based on its status as the region's largest manufacturing employer. While Georgia's diverse industrial mix (automotive, aerospace, food processing) makes it an excellent representative for Alabama or North Carolina, its specific status as a massive logistics hub (centered in Atlanta) may slightly overstate the competitive growth of the Logistics sector compared to more rural parts of the region.
