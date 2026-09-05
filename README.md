@@ -157,9 +157,8 @@ Finally, the external market pressure identified in (`Layer 5`) confirms that th
 ---
 
 ## The 5-Layer Risk Framework: Deep Dive
-
 ### **Layer 1: Aging Risk — The Structural Certainty of Demographic Exit**
-<img width="2084" height="884" alt="layer1_aging" src="https://github.com/user-attachments/assets/9b29b1b2-7cb3-48e5-93f3-1dbdefae6492" />
+<img width="2234" height="852" alt="layer1_aging" src="https://github.com/user-attachments/assets/0466d387-21d6-4760-af40-84f5d4b43888" />
 The Energy Belt’s senior manufacturing workforce is aging out faster than it can be replaced. According to Bureau of Labor Statistics (BLS) data, the historical "natural" separation rate for manufacturing—driven by unavoidable factors like retirement and health—has averaged 4.4% annually. This represents the baseline velocity of labor loss that no employer policy can fully prevent.
 
 Current data for the Southeast manufacturing sector shows an effective annual separation rate approaching **6.6%**. While the difference between 4.4% and 6.6% may seem modest, the compounding effect over a decade is transformative. Under the baseline scenario, the industry retains **61%** of its current workforce by 2035; under the accelerated scenario, that figure drops to **48.7%**. For a region with 1.2 million manufacturing workers, this shift represents a loss of roughly 150,000 experienced employees beyond original projections. Historical data from the Census Bureau’s Job-to-Job Flows (J2J) validates these trends. Between 2010 and 2019, senior outflows rose steadily as early Boomers reached retirement age. A brief dip occurred during the 2020–2021 pandemic lockdowns due to economic uncertainty, but by 2022, the trend resumed with even greater intensity as pent-up retirements were released.
@@ -168,7 +167,7 @@ Current data for the Southeast manufacturing sector shows an effective annual se
 ---
 
 ### **Layer 2: Youth Inflow — Currently Positive, But Rapidly Deteriorating**
-<img width="2381" height="906" alt="layer2_youth_inflow" src="https://github.com/user-attachments/assets/5357e312-0bd9-4d4a-b11c-71e6b72a8cd6" />
+<img width="1634" height="901" alt="layer2_replacement_ratio" src="https://github.com/user-attachments/assets/c0b2bf3b-17a9-428a-8982-0a607869bf23" />
 
 Youth recruitment—specifically workers aged 25–34—has seen a massive surge. In 2010, roughly 67,000 young workers entered the industry; by 2024, that number doubled to approximately 130,000. This 100% increase reflects the success of regional workforce development and the economic appeal of the Southeast. However, absolute growth is only half the story. To understand long-term sustainability, we must look at the **Replacement Ratio (RR)**: the number of young workers entering for every senior worker (aged 55+) who leaves.
 
@@ -179,7 +178,7 @@ Statistical analysis (R-squared of 0.89) confirms this is a highly consistent, n
 ---
 
 ### **Layer 3: Retention Failure — Even New Hires Are Leaving**
-<img width="1784" height="1184" alt="layer3_retention" src="https://github.com/user-attachments/assets/afbeb42c-8f31-40a5-9fee-036599408347" />
+<img width="2235" height="852" alt="layer3_retention" src="https://github.com/user-attachments/assets/7f8c62e3-5730-412f-8a77-0b5713fa1b63" />
 
 Layer 3 data reveals that the Energy Belt’s manufacturing sector suffers from an **11.0% annual separation rate**. This means approximately one in nine workers leaves the industry every year—the highest turnover rate among all major regional peer sectors.
 
@@ -203,7 +202,7 @@ To solve the problem, we must distinguish between what is inevitable and what is
 ---
 
 ### **Layer 5: External Competition — Mapping the Sectoral Shift**
-<img width="1785" height="1035" alt="layer5_competition" src="https://github.com/user-attachments/assets/2bc2317b-557f-4a77-aee1-3f3344326e30" />
+<img width="1485" height="904" alt="layer5_destination_mix" src="https://github.com/user-attachments/assets/6045e017-86a0-4095-befd-67e52dd74961" />
 
 Utilizing a Longitudinal Migration Analysis, Layer 5 investigates the shifting preferences of the modern workforce across the Energy Belt’s industrial landscape. We analyze the Origin-Destination (O-D) matrix to determine the structural drivers behind sectoral talent drain.
 
