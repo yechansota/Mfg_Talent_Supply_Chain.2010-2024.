@@ -1,8 +1,7 @@
 # **Manufacturing Talent Supply Chain at Risk**    
 <p align="center">
-  <strong>A 15-Year Empirical Analysis of the Energy Belt (2010–2024)</strong><br>
-  <em>Quantitative Diagnosis of Workforce Attrition Using Multi-Layer Risk Framework</em><br>
-  <small>(Region: AL · GA · NC · SC · TN)</small>
+  <strong>Manufacturing Talent Supply Chain at Risk The Mentorship Vacuum, Re-examined: What 15 Years of Federal Data Actually Show A 15-Year Empirical Analysis of the U.S. Southeast </strong><br>
+  <em>(2010–2024) (Region: AL · GA · NC · SC · TN)</em><br>
 </p>
 
 ### **Project Motivation**
@@ -10,11 +9,28 @@ This project initially began in 2023 as an HR Case Competition focused on workfo
 
 I have revisited this challenge from a Macro-HR perspective: Talent Supply Chain Management. By manually extracting and cleansing 15 years of administrative records (2010–2024)  from 'the U.S. Census Bureau (J2J, QWI)', 'the BLS', and 'IPEDS' , I built a 5-layer diagnostic framework. My goal was to move beyond anecdotal evidence and provide an early-warning system for the manufacturing sector in the Energy Belt —a region where operational stability is currently masking a compound talent crisis.
 
-As a professional in the automotive industry, I recognized that the long-term viability of our operations is inextricably linked to the health of the regional labor market. The "Energy Belt"—comprising AL, GA, NC, SC, and TN—serves as the backbone of U.S. manufacturing. However, beneath the surface of today’s operational stability, 15 years of federal workforce data reveal a compounding talent crisis that can no longer be ignored.
+By manually extracting and cleansing 15 years of administrative records (2010–2024) from the U.S. Census Bureau (J2J, QWI), the BLS, and IPEDS, I built a five-layer diagnostic framework. This document reports the second version of that analysis. The first version contained errors of flow direction, geographic filtering, rate units, and unsupported validation claims. Rebuilding it from source reversed two of the original headline findings. Both the corrections and the reversals are documented below, because a diagnostic tool that cannot survive its own audit is not worth deploying.
 
 I initiated this project to provide a data-driven "stress test(What-IF-Scenario)" of our talent supply chain. By synthesizing U.S. Census Bureau (J2J) flows, BLS industry tables, and IPEDS graduate data (2010–2024), I developed a five-layer quantitative risk model to assess the structural integrity of the region's workforce.
 
 While each layer independently signals significant stress, their interaction describes a self-reinforcing collapse mechanism. Without immediate, coordinated intervention, this demographic and competitive shift will fundamentally reshape the region’s manufacturing capacity well before 2040. This analysis serves as a strategic roadmap to identify where our "talent reservoir" is leaking and how we can secure the skilled human capital necessary for the future of the automotive sector.
+
+>
+> | # | Error | Effect |
+> |---|---|---|
+> | 1 | **Flow direction.** Per the LEHD schema, in J2J Origin-Destination tables the origin firm's characteristics carry the `_orig` suffix and unsuffixed firm variables describe the **destination**. V1 filtered both the youth and senior series on the unsuffixed `industry`, so both measured hires *into* manufacturing. | **The Replacement Ratio denominator was the wrong direction.** |
+> | 2 | **Geography filter.** LEHD stores FIPS zero-padded. A filter on `'1'` rather than `'01'` **dropped Alabama entirely** — about 19% of matching rows. | All five-state totals understated. |
+> | 3 | **Aggregation level.** LEHD files stack marginal and detailed tabulations. V1 applied no `agg_level` filter, **summing both and double counting every flow.** | Absolute counts inflated roughly 2x. |
+> | 4 | **Rate units.** QWI rates are **quarterly**. V1 reported a quarterly figure as annual. | The "11% annual separation rate" was wrong. |
+> | 5 | **Retirement not observed.** Job-to-job files cannot see retirement, because retirement is an exit to **nonemployment**. V1 called job-to-job moves "Baby Boomer retirements". | Layer 1's core claim was unsupported until `ENPersist` was added. |
+> | 6 | **Unsupported validation.** V1 charts carried the note `validated with R²=0.98 backtest` and a summary line `Overall validity: 91% (A-)`. **Neither had any corresponding code.** | Both removed. A real backtest now runs, and it fails — see Layer 4. |
+> | 7 | **Layer 4 sign error.** Cohort ageing **added** to the junior stock. Ageing moves workers *out* of a compartment. | Simulation direction was wrong. |
+> | 8 | **Layer 5 was not computed.** The origin/destination arrays were **hardcoded literals**; no transition matrix was calculated despite the "Markov transition matrix" claim. | Replaced with a matrix computed from `agg_level 247043`. |
+>
+> **Inference was also strengthened.** These are 15 annual observations with
+> autocorrelated residuals, so **Newey-West (HAC) standard errors** replace naive
+> OLS, and the threshold-crossing year is reported as a **bootstrap interval**
+> rather than a point estimate.
 
 **Analytical Architecture**
 
@@ -23,41 +39,119 @@ To transform 15 years of fragmented federal data into a predictive model, I deve
 **Modeling Approach**: Combines Exponential Decay (Demographics), Supply-Demand Gap Analysis (Education), and Stock-Flow Simulation (Knowledge Transfer).
 
 ### The Core Finding: A Multi-Layered Talent Crisis 
-First, according to (`Layer 1`) (BLS Table 1.10, 2024), the Energy Belt’s senior manufacturing workforce is exiting at an accelerated rate of 6.6% per year, primarily driven by Baby Boomer retirements, which will reduce the veteran talent pool by more than half within a decade.
+Manufacturing in the Southeast is not losing workers faster than its peers. It retains them better than any of them. The risk is not the volume of attrition but its composition: the senior tier is increasingly leaving for other employers rather than retiring, and roughly a third of those moves are to another manufacturing plant in the same five states. This is not an industry-attractiveness problem. It is intra-regional competition for the same experienced workers.
 
 **Layer 1: Aging Risk**
-- **Model**: Exponential Decay **$$N(t) = N₀ × e^(-λt)$$**
-- **Baseline λ**: 4.4%/year (BLS Table 1.10)
-- **Accelerated λ**: 6.6%/year (Baby Boomer peak scenario)
-- **Result**: Half-life reduces from 15.8 → 10.5 years under acceleration
-
-Second, as shown in (`Layer 2`) (Census J2J 2010–2024), while young workers aged 25–34 are currently entering at a ratio of 2.57 replacements per departure, this ratio is declining at a statistically significant rate of 0.12 per year (p < 0.001), putting the industry on a path to fall below the critical sustainability threshold of 1.0 by 2037.
+> **The senior manufacturing workforce did not shrink. It grew 51%.**
+>
+> | | 2010 | 2024 | Change |
+> |---|---|---|---|
+> | 55+ headcount | 1,265,333 | 1,910,629 | **+51.0%** |
+> | 55+ share of employment | 21.66% | 28.96% | **+7.31 pp** |
+> | 45–54 share | 31.61% | 25.33% | **−6.28 pp** |
+>
+> **The senior share rises +0.540 pp per year (R² = 0.977, HAC p < 0.001)** —
+> among the most linear trends in the dataset. **Cohorts age into the 55+ band
+> faster than they exit it**, which is why the exponential-decay model in V1
+> was structurally inappropriate. The hollowing is in the **45–54 band**, the
+> group that would ordinarily be next in line for senior roles.
+>
+> **λ is now measured, not assumed.** Using separations to persistent
+> nonemployment (`ENPersist`) over employment:
+>
+> - **55+ annual exit hazard: 12.73% (2010–2019), 13.31% (2021–2024)**
+> - **2020 COVID spike: 15.49%, returning to trend by 2021**
+>
+> **V1 assumed 4.4% and 6.6%. Neither is supported by the data.**
+>
+> *Caveat: `ENPersist` at ages 25–34 also captures schooling, caregiving and
+> job search. It proxies retirement only for the 55+ group.*
 
 **Layer 2: Attrition Risk**
-- **Metric**: Structural Gap = Total Separation - Natural Exit
-- **Manufacturing Gap**: 6.6%p (highest among peer industries)
-- **Comparison**: Construction (3.1%p), Logistics (4.2%p), Retail (5.6%p)
-
-Third, the analysis in (`Layer 3`) reveals that manufacturing's 11% annual separation rate—the highest among comparable industries—is compounded by the cultural and economic friction points.
+> **2010 RR: 4.77 | 2024 RR: 2.71 | Annual decline: 0.186 points**
+>
+> **Slope −0.186/yr, HAC 95% CI [−0.213, −0.160], R² = 0.943,
+> Newey-West p < 0.000001, Durbin-Watson 1.68.** The Durbin-Watson statistic
+> indicates **no material residual autocorrelation**, so the significance is
+> not an artifact of the small annual sample.
+>
+> Youth hires into manufacturing rose from **41,351 to 83,340 (+101.5%)**
+> while senior separations rose from **8,670 to 30,765 (+254.8%)**.
+> **Recruitment doubled; senior outflow more than tripled.**
+>
+> **The ratio crosses 1.0 in 2033, with a bootstrap 95% interval of
+> 2031–2037.** **V1's "2037" was the optimistic end of that interval reported
+> as a point estimate.**
+>
+> **COVID handling:** RR dipped to 3.27 in 2020 and returned to trend by 2021.
+> This is a transient disturbance, not a structural break, so no dummy is
+> required; a 2020–21 exclusion robustness check is reported in the appendix.
 
 **Layer 3: Hiring Capacity**
-- **3-A (J2J)**: Replacement Ratio = Young Inflow / Senior Outflow
-- 2010: RR = 0.95 | 2024: RR = 0.25 | 2035 forecast: 0.18
-- Statistical significance: p = 0.001, R² = 0.87
-  **3-B (IPEDS)**: Supply = 33,047 vs Demand = 35,700 → Gap = -2,653/year
-
-Layer 3 identified in our (`Layer 4`) Stock-Flow simulation. This simulation demonstrates that the resulting "Mentorship Vacuum" accelerates junior turnover, threatening to collapse the talent pipeline index from 258 to 9 by 2035, with a systemic "point of no return" arriving as early as 2028.
-
+> **Manufacturing has the LOWEST separation rate in its peer set, not the
+> highest. V1 stated the opposite.**
+>
+> | Industry | Quarterly | Annualised |
+> |---|---|---|
+> | Admin & Support | 25.77% | 69.6% |
+> | Retail | 15.74% | 49.6% |
+> | Transport & Warehousing | 14.51% | 46.6% |
+> | Construction | 12.21% | 40.6% |
+> | Health Care | 10.95% | 37.1% |
+> | **Manufacturing** | **8.67%** | **30.4%** |
+>
+> **Manufacturing ranks lowest in every single age band.** Workers aged 55–64
+> separate at 5.27% quarterly, against 16.56% in Admin & Support.
+>
+> **The V1 decomposition into "natural 4.4% / structural 6.6%" is deleted.**
+> It had no computational basis. It is replaced by a split the data can
+> actually support — **why** seniors leave:
+>
+> | | 2010 | 2024 | Change |
+> |---|---|---|---|
+> | Retirement (`ENPersist`) | 49,623 | 67,972 | **+37.0%** |
+> | Move to another employer (`EESep`) | 6,110 | 21,805 | **+256.9%** |
+> | Retirement as share of separations | 81.2% | 65.5% | **−1.29 pp/yr** |
+>
+> All three trends are significant at p < 0.001. **Retirement is real and
+> rising, but job-to-job exit is growing seven times faster.** The mechanism
+> of mentor loss is shifting from demographic inevitability toward something
+> employers can act on.
+>
+> 
 **Layer 4: The No-Intervention Scenario (The "Knowledge Vacuum")**
 - **Concept**: Senior depletion → Mentoring loss → Poor training → Higher turnover
 - **Policy Impact**: Phased retirement can preserve +7.3pts mentor stock by 2035
 
 Finally, the external market pressure identified in (`Layer 5`) confirms that this is not just an internal depletion but a competitive loss, as the regional workforce is being actively redistributed toward the Logistics (+5.3%) and Service (+3.0%) sectors, leaving manufacturing at a structural disadvantage in the regional "war for talent."
 
-**Layer 5: External Competition**
-- **Method**: Markov transition matrix from J2J data
-- **Result**: Manufacturing net loss of -3.1%p to other industries
-- **Primary Competitor**: Logistics (+5.3%p gain)
+**Layer 4: External Competition**
+> **V1's origin and destination figures were hardcoded arrays; no transition
+> matrix was computed.** This version derives the destination mix from
+> `agg_level 247043` (origin sector × destination sector).
+>
+> **The largest single destination for a departing manufacturing worker is
+> another manufacturing employer: 30.6% in 2024, essentially unchanged from
+> 30.0% in 2010.** A separation is not necessarily a loss to the sector.
+>
+> Change in destination share, 2010 → 2024:
+>
+> | Destination | Change |
+> |---|---|
+> | **Transport & Warehousing** | **+2.61 pp** (3.4% → 6.0%) |
+> | Accommodation & Food | +1.50 pp |
+> | Retail | +1.34 pp |
+> | Health Care | +1.02 pp |
+> | **Admin & Support** | **−4.15 pp** (23.3% → 19.2%) |
+>
+> **The logistics hypothesis survives, at a smaller magnitude than V1 claimed
+> (+2.61 pp, not +5.3%).** The largest shift is the **decline of Admin &
+> Support** — staffing and temp agencies — which V1 did not identify at all.
+>
+> **Deleted from V1:** the "Georgia as proxy" framing. All five states are
+> included, so no proxy is needed.
+ 
+---
   
 
 ---
@@ -99,9 +193,12 @@ To solve the problem, we must distinguish between what is inevitable and what is
 ### **Layer 4: Accelerated Collapse — The Negative Feedback Loop Simulation**
 <img width="2384" height="907" alt="layer4_collapse" src="https://github.com/user-attachments/assets/b3ed8404-abaa-46c9-bb27-696b5cba8755" />
 
-To capture the long-term impact of knowledge loss, Layer 4 employs a Stock-Flow Simulation that tracks the dynamic movement of talent over a 12-year horizon (2024-2035)."Layer 4 utilizes a Stock-Flow Simulation from 2024 to 2035. This model treats the workforce as a reservoir that is currently leaking faster than it is being refilled.
+> The rebuilt compartment model was tested by initialising it on 2010 stocks and running it to 2019 against observed employment. **It failed: worst-bandMAPE 44.9%, and R² against observed stocks is negative, meaning it performs worse than predicting the sample mean.** The pipeline gates the projection behind this test, so nothing is produced.
 
-**The No-Intervention Scenario (Red Line)** :If current trends continue, the junior workforce index collapses from **258** to **9** by **2035** due to accelerated turnover driven by a "Mentorship Vacuum(Konwledge Transfer).". This represents a total breakdown of the talent pipeline. The "critical threshold"—where the junior workforce is cut in half—is crossed as early as 2028. The Policy case shows the tangible benefit of coordinated regional investment.The gap between these two lines—the "Prevented Collapse" zone—is the space where **policy, management, and community intervention can change the outcome**. The industry is currently on a trajectory toward 2028 being a point of no return for junior talent retention.
+> **Why it fails:** QWI `HirA` counts every hire in a quarter includingshort-tenure churn, while `SepBeg` is measured at the start of quarter.They are not a matched pair, so hires minus separations is not net employment change.
+> **What would fix it:** matched full-quarter measures (`EmpS` withfull-quarter flows), or the J2J Job Stayers file, which reports the stayer stock directly.
+> **On the "mentorship vacuum" premise itself:** at the aggregate level **seniors are not scarce relative to juniors** — 1.33 seniors per junior in 2024. Aheadcount-based mentoring shortage does not bind. **The defensible claim is that mentor availability per junior declines, not that it collapses.** Demonstrating a binding shortage requires **occupation-level (SOC) data**, which these industry-level files cannot provide.
+> **Deleted from V1:** the "258 → 9 by 2035" collapse, the "point of no return by 2028", the "+7.3pts mentor stock" figure, and the composite policy scenario that altered five parameters at once and reported a single improvement factor that cannot be decomposed.
 
 ---
 
@@ -120,7 +217,7 @@ The analysis compares the "Origin" (2010 share of worker flows) to the "Destinat
 ---
 
 ### **Considerations**
-**Geographic and Sectoral Aggregation**
+****Geographic and Sectoral Aggregation**
 The use of state-level Job-to-Job Flows (J2J) data necessitates a degree of generalization. By treating the five-state Energy Belt as a single economic unit, the model overlooks localized variations. Significant differences exist between dense, high-tech automotive corridors and rural industrial counties, which may experience demographic pressures differently.
 
 **The COVID-19 Distortion**
@@ -128,6 +225,7 @@ The pandemic period (2020–2021) created unique anomalies across all metrics. I
 
 **Simulation Parameters and Stress Testing**
 The Layer 4 simulation is a worst-case stress test, not a definitive forecast. It uses specific coefficients—such as the 0.5 mentoring quality multiplier and a 35% cap on junior attrition—to model how the system behaves under extreme stress. These parameters are designed to identify where the "revolving door" effect becomes catastrophic. Actual outcomes will fluctuate based on the timing and intensity of regional policy responses.
+
 
 ### **Future Work: Expanding the Diagnostic Framework**
 To build upon the foundational Five-Layer Risk Model and transition from a macro-level diagnosis to targeted, actionable interventions, future research will focus on the following key areas:
@@ -141,5 +239,15 @@ To move beyond static historical analysis, we aim to develop a dynamic, real-tim
 **Causal Inference for Policy Evaluation:**
 While the current Layer 4 simulation models the potential impact of interventions (e.g., phased retirement), future work will employ causal inference methods alongside A/B testing to empirically evaluate the effectiveness of newly implemented retention policies. This methodological shift will allow us to move beyond observing basic outcomes ("Did this work?") toward understanding the underlying mechanics ("What caused it?", "For whom did it work?", and "Why?").
 
-**Representative Proxy Modeling**
-The reliance on Georgia as a proxy for the entire Energy Belt in Layer 5 is a methodological choice based on its status as the region's largest manufacturing employer. While Georgia's diverse industrial mix (automotive, aerospace, food processing) makes it an excellent representative for Alabama or North Carolina, its specific status as a massive logistics hub (centered in Atlanta) may slightly overstate the competitive growth of the Logistics sector compared to more rural parts of the region.
+> **Occupation-level extension (now the priority, not an option).** Layer 4
+> cannot be built at industry level. **SOC-level data is required** to test
+> whether a mentoring shortage binds in specific production roles — the
+> aggregate headcount says it does not.
+>
+> **Matched-measure reconstruction of the stock-flow model**, using
+> full-quarter employment and full-quarter flows so the backtest can pass.
+>
+> **Decision-support tool.** The end goal remains a monitoring dashboard for
+> operating leaders, tracking the Replacement Ratio and the retirement-versus-
+> job-to-job split by site. **That tool is only worth building on a model that
+> passes its backtest**, which is why this version reports the failure rather
