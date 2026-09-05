@@ -43,7 +43,8 @@ Manufacturing in the Southeast is not losing workers faster than its peers. It r
 
 **Layer 1: Aging Risk**
 > **The senior manufacturing workforce did not shrink. It grew 51%.**
->
+<img width="2234" height="853" alt="layer1_aging" src="https://github.com/user-attachments/assets/72a3b270-bc7b-4791-a610-3d09eeb5810c" />
+
 > | | 2010 | 2024 | Change |
 > |---|---|---|---|
 > | 55+ headcount | 1,265,333 | 1,910,629 | **+51.0%** |
@@ -69,7 +70,8 @@ Manufacturing in the Southeast is not losing workers faster than its peers. It r
 
 **Layer 2: Attrition Risk**
 > **2010 RR: 4.77 | 2024 RR: 2.71 | Annual decline: 0.186 points**
->
+><img width="1634" height="901" alt="layer2_replacement_ratio" src="https://github.com/user-attachments/assets/abbcef00-221a-4419-940b-9b41e90adee5" />
+
 > **Slope −0.186/yr, HAC 95% CI [−0.213, −0.160], R² = 0.943,
 > Newey-West p < 0.000001, Durbin-Watson 1.68.** The Durbin-Watson statistic
 > indicates **no material residual autocorrelation**, so the significance is
@@ -88,9 +90,9 @@ Manufacturing in the Southeast is not losing workers faster than its peers. It r
 > required; a 2020–21 exclusion robustness check is reported in the appendix.
 
 **Layer 3: Hiring Capacity**
-> **Manufacturing has the LOWEST separation rate in its peer set, not the
-> highest. V1 stated the opposite.**
->
+> **Manufacturing has the LOWEST separation rate in its peer set, not the> highest. V1 stated the opposite.**
+><img width="2235" height="852" alt="layer3_retention" src="https://github.com/user-attachments/assets/37ce92b2-8c0e-4fe7-83d2-993b9d5ad831" />
+
 > | Industry | Quarterly | Annualised |
 > |---|---|---|
 > | Admin & Support | 25.77% | 69.6% |
@@ -120,6 +122,8 @@ Manufacturing in the Southeast is not losing workers faster than its peers. It r
 >
 > 
 **Layer 4: The No-Intervention Scenario (The "Knowledge Vacuum")**
+<img width="2234" height="854" alt="layer4_projection (2)" src="https://github.com/user-attachments/assets/be51bcae-cd6d-4812-815b-823f781ba0c2" />
+
 - **Concept**: Senior depletion → Mentoring loss → Poor training → Higher turnover
 - **Policy Impact**: Phased retirement can preserve +7.3pts mentor stock by 2035
 
@@ -158,7 +162,8 @@ Finally, the external market pressure identified in (`Layer 5`) confirms that th
 
 ## The 5-Layer Risk Framework: Deep Dive
 ### **Layer 1: Aging Risk — The Structural Certainty of Demographic Exit**
-<img width="2234" height="852" alt="layer1_aging" src="https://github.com/user-attachments/assets/0466d387-21d6-4760-af40-84f5d4b43888" />
+<img width="1485" height="904" alt="layer5_destination_mix" src="https://github.com/user-attachments/assets/3d648c05-3caa-46f3-a2ea-1bde803317a4" />
+
 The Energy Belt’s senior manufacturing workforce is aging out faster than it can be replaced. According to Bureau of Labor Statistics (BLS) data, the historical "natural" separation rate for manufacturing—driven by unavoidable factors like retirement and health—has averaged 4.4% annually. This represents the baseline velocity of labor loss that no employer policy can fully prevent.
 
 Current data for the Southeast manufacturing sector shows an effective annual separation rate approaching **6.6%**. While the difference between 4.4% and 6.6% may seem modest, the compounding effect over a decade is transformative. Under the baseline scenario, the industry retains **61%** of its current workforce by 2035; under the accelerated scenario, that figure drops to **48.7%**. For a region with 1.2 million manufacturing workers, this shift represents a loss of roughly 150,000 experienced employees beyond original projections. Historical data from the Census Bureau’s Job-to-Job Flows (J2J) validates these trends. Between 2010 and 2019, senior outflows rose steadily as early Boomers reached retirement age. A brief dip occurred during the 2020–2021 pandemic lockdowns due to economic uncertainty, but by 2022, the trend resumed with even greater intensity as pent-up retirements were released.
@@ -190,7 +195,6 @@ To solve the problem, we must distinguish between what is inevitable and what is
 ---
 
 ### **Layer 4: Accelerated Collapse — The Negative Feedback Loop Simulation**
-<img width="2384" height="907" alt="layer4_collapse" src="https://github.com/user-attachments/assets/b3ed8404-abaa-46c9-bb27-696b5cba8755" />
 
 > The rebuilt compartment model was tested by initialising it on 2010 stocks and running it to 2019 against observed employment. **It failed: worst-bandMAPE 44.9%, and R² against observed stocks is negative, meaning it performs worse than predicting the sample mean.** The pipeline gates the projection behind this test, so nothing is produced.
 
