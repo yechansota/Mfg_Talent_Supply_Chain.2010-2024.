@@ -1,0 +1,324 @@
+
+==============================================================================
+  THE MENTORSHIP VACUUM — FULL PIPELINE
+==============================================================================
+Region: AL, GA, NC, SC, TN   Sector: NAICS 31-33   Period: 2010-2024
+
+==============================================================================
+  DATA AUDIT
+==============================================================================
+J2J OD    rows=2,294,419  states=['01', '13', '37', '45', '47']  years=2010-2024
+J2J Sep   rows=   47,998  states=['01', '13', '37', '45', '47']  years=2010-2024
+QWI       rows=   46,704  states=['01', '13', '37', '45', '47']  years=2010-2024
+
+Audit PASSED
+
+==============================================================================
+  LAYER 1 — AGE STRUCTURE AND LABOR FORCE EXIT
+==============================================================================
+
+Employment by age (sum of quarterly beginning-of-quarter counts)
+agegrp    25-34    35-44    45-54    55-64     65+
+year                                              
+2010    1103750  1626462  1846865  1077204  188129
+2011    1109998  1604997  1852676  1119598  196128
+2012    1127941  1596240  1854856  1163500  213506
+2013    1150455  1581640  1853860  1217431  228245
+2014    1187187  1571223  1851626  1266296  241203
+2015    1246875  1572652  1860990  1315546  255156
+2016    1292806  1560622  1862988  1356213  269551
+2017    1330780  1549853  1853462  1395831  285616
+2018    1381448  1560080  1844223  1432748  303793
+2019    1416092  1561122  1812243  1472606  326401
+2020    1367010  1514022  1735822  1466164  334308
+2021    1352610  1501211  1693067  1463910  348936
+2022    1411427  1545137  1710685  1491055  380603
+2023    1438979  1569553  1702535  1500811  408384
+2024    1436425  1578892  1670703  1483259  427370
+
+Age composition (% of manufacturing employment)
+agegrp  25-34  35-44  45-54  55-64   65+
+year                                    
+2010    18.89  27.84  31.61  18.44  3.22
+2011    18.87  27.28  31.49  19.03  3.33
+2012    18.94  26.80  31.14  19.53  3.58
+2013    19.07  26.22  30.74  20.18  3.78
+2014    19.41  25.68  30.27  20.70  3.94
+2015    19.95  25.16  29.77  21.04  4.08
+2016    20.38  24.61  29.37  21.38  4.25
+2017    20.74  24.16  28.89  21.76  4.45
+2018    21.18  23.92  28.28  21.97  4.66
+2019    21.49  23.69  27.51  22.35  4.95
+2020    21.30  23.59  27.05  22.85  5.21
+2021    21.27  23.60  26.62  23.02  5.49
+2022    21.59  23.63  26.16  22.80  5.82
+2023    21.74  23.71  25.72  22.67  6.17
+2024    21.78  23.93  25.33  22.49  6.48
+
+Senior (55+) headcount  2010:    1,265,333   2024:    1,910,629   (+51.0%)
+Senior (55+) share      2010:       21.66%   2024:       28.96%   (+7.31 pp)
+Senior share trend      +0.540 pp/yr   HAC p=0.000000   R2=0.977   DW=0.39
+
+NOTE: the senior stock GREW. Cohorts age into the 55+ band faster than
+      they exit it, so an exponential decay on the senior stock is not
+      an appropriate model. Layer 4 uses explicit age compartments.
+
+Annualised exit hazard to persistent nonemployment (%)
+        55+  45-54  35-44  25-34
+year                            
+2010  14.79   9.12  10.11  14.92
+2011  13.91   8.35   9.54  14.44
+2012  12.85   7.69   9.02  13.73
+2013  12.51   7.38   8.69  13.32
+2014  12.13   6.79   8.29  12.62
+2015  12.10   6.85   8.50  12.68
+2016  12.24   6.95   8.98  12.84
+2017  12.30   7.03   9.18  12.98
+2018  12.12   7.19   9.44  13.01
+2019  12.34   7.50   9.74  13.03
+2020  15.49   9.62  12.21  16.04
+2021  13.44   8.29  10.82  14.06
+2022  13.07   8.58  10.87  13.88
+2023  13.26   8.98  11.11  13.60
+2024  13.49   8.82  10.65  12.65
+
+lambda_55+  2010-2019 = 12.73%/yr
+lambda_55+  2021-2024 = 13.31%/yr
+lambda_55+  2020 COVID = 15.49%/yr
+
+NOTE: ENPersist at ages 25-34 also captures schooling, caregiving and
+      job search. Read it as retirement only for the 55+ group.
+
+Observed annual hire and separation rates, 2021-2024
+  25-34   hire 0.541   sep 0.393   net +0.147
+  35-54   hire 0.357   sep 0.261   net +0.097
+  55+     hire 0.223   sep 0.218   net +0.005
+
+==============================================================================
+  LAYER 2 — REPLACEMENT RATIO
+==============================================================================
+
+Youth hires INTO manufacturing vs senior separations OUT of manufacturing
+      youth_hires_in  senior_seps_out     RR
+year                                        
+2010           41351             8670  4.769
+2011           50664             9335  5.427
+2012           54854            11120  4.933
+2013           58780            12128  4.847
+2014           69143            14683  4.709
+2015           77364            16911  4.575
+2016           82670            18837  4.389
+2017           89632            21338  4.201
+2018           99138            24827  3.993
+2019           95705            26225  3.649
+2020           78242            23951  3.267
+2021          107706            32235  3.341
+2022          114113            36836  3.098
+2023           95450            34384  2.776
+2024           83340            30765  2.709
+
+n                   = 15
+slope               = -0.1861 RR/yr
+OLS p               = 0.00000000
+Newey-West HAC p    = 0.00000000
+HAC 95% CI (slope)  = [-0.2125, -0.1597]
+R-squared           = 0.9428
+Durbin-Watson       = 1.683
+
+Fitted RR at 2024    = 2.743
+Crossing RR=1.0    = 2033   (95% CI 2031-2037)
+
+Youth hires   2010:    41,351  2024:    83,340  (+101.5%)
+Senior seps   2010:     8,670  2024:    30,765  (+254.8%)
+
+==============================================================================
+  LAYER 5 — WHERE SEPARATING WORKERS GO
+==============================================================================
+
+Destination share of separations originating in manufacturing (%)
+year                   2010   2015   2019   2024
+industry                                        
+Agriculture            1.02   0.70   0.66   0.50
+Mining                 0.30   0.16   0.21   0.25
+Utilities              0.23   0.21   0.17   0.31
+Construction           6.09   6.07   5.74   5.70
+Manufacturing         30.04  28.93  29.47  30.58
+Wholesale              6.84   5.96   5.63   6.33
+Retail                 7.13   7.30   7.46   8.47
+Transport & Whse       3.41   3.78   4.45   6.03
+Information            0.80   0.70   0.65   0.61
+Finance                0.89   0.77   0.73   0.77
+Real Estate            0.74   0.70   0.79   0.86
+Professional Svcs      4.13   4.08   3.51   3.71
+Management             1.44   1.31   1.21   1.14
+Admin & Support       23.31  26.76  25.38  19.15
+Education              1.37   1.11   0.98   1.13
+Health Care            2.91   2.61   3.08   3.93
+Arts & Rec             0.45   0.46   0.51   0.60
+Accommodation & Food   5.12   5.41   6.39   6.63
+Other Svcs             2.27   1.66   1.69   1.83
+Public Admin           1.52   1.31   1.30   1.48
+
+Change in destination share, first to last year (pp)
+industry
+Transport & Whse        2.61
+Accommodation & Food    1.50
+Retail                  1.34
+Health Care             1.02
+Manufacturing           0.54
+Arts & Rec              0.15
+Real Estate             0.12
+Utilities               0.08
+Public Admin           -0.04
+Mining                 -0.06
+Finance                -0.12
+Information            -0.18
+Education              -0.24
+Management             -0.30
+Construction           -0.40
+Professional Svcs      -0.42
+Other Svcs             -0.43
+Wholesale              -0.51
+Agriculture            -0.52
+Admin & Support        -4.15
+
+Stayed within manufacturing: 30.0% -> 30.6%
+A separation is not necessarily a loss to the sector. Roughly a third
+of moves are to another manufacturing employer in the same region,
+which reframes this as intra-regional competition for the same workers.
+
+==============================================================================
+  LAYER 3 — SEPARATION RATES AND MECHANISM
+==============================================================================
+
+Peer comparison, 2021-2024, employment-weighted
+        industry  quarterly_pct  annualised_pct
+ Admin & Support          25.53            69.2
+          Retail          15.78            49.7
+Transport & Whse          14.71            47.1
+    Construction          12.15            40.4
+     Health Care          11.03            37.3
+   Manufacturing           8.79            30.8
+
+Manufacturing ranks 6 of 6 from the top, i.e. it has the LOWEST separation rate of the peer set.
+
+Quarterly separation rate by age, 2021-2024 (%)
+                  25-34  35-44  45-54  55-64    65+
+Manufacturing     11.75   8.53   6.13   5.28   8.55
+Construction      14.74  11.54   9.49   8.27  10.03
+Transport & Whse  18.42  13.43   9.97   8.12  11.40
+Health Care       13.66  10.26   8.56   7.47   9.23
+Retail            17.68  13.00  10.35   8.58   9.81
+Admin & Support   30.72  24.30  20.07  16.37  16.15
+
+Why senior (55+) manufacturing workers separate
+        MSep  ENPersist  EESep  retire_share_pct  j2j_share_pct
+year                                                           
+2010   61097      49623   6110              81.2           10.0
+2011   60814      48361   6967              79.5           11.5
+2012   60365      46552   7895              77.1           13.1
+2013   63086      47504   9059              75.3           14.4
+2014   66129      47961  10833              72.5           16.4
+2015   71042      49816  12715              70.1           17.9
+2016   75204      52227  13827              69.4           18.4
+2017   80286      54255  16034              67.6           20.0
+2018   84832      55188  18503              65.1           21.8
+2019   89430      58245  19405              65.1           21.7
+2020  102480      74172  17193              72.4           16.8
+2021  102420      64244  24867              62.7           24.3
+2022  107281      64406  28006              60.0           26.1
+2023  106771      66700  25016              62.5           23.4
+2024  103833      67972  21805              65.5           21.0
+ENPersist  2010->2024   +37.0%   slope=   1761.3/yr   HAC p=0.000000   R2=0.783
+EESep      2010->2024  +256.9%   slope=   1496.7/yr   HAC p=0.000000   R2=0.906
+MSep       2010->2024   +69.9%   slope=   4008.1/yr   HAC p=0.000000   R2=0.945
+
+Retirement share of senior separations: 81.2% -> 65.5%   (-1.29 pp/yr, HAC p=0.000000)
+Seniors increasingly leave for another EMPLOYER rather than retiring,
+which moves the problem from demographic inevitability to retention.
+
+==============================================================================
+  LAYER 4 — BACKTESTED COMPARTMENT PROJECTION
+==============================================================================
+
+Identity check  EmpEnd = Emp - SepBeg + HirAEnd
+  mean |error| = 0.00020%   max = 0.00062%
+
+Measured quarterly rates, 2021-2024
+  band        hire       sep     aging       net
+  25-34     0.1286    0.1192   -0.0053   +0.0041
+  35-54     0.0755    0.0733   -0.0014   +0.0009
+  55+       0.0407    0.0600   +0.0231   +0.0039
+
+Ageing signs are the expected direction: the two younger bands lose
+workers to the band above, and 55+ receives them.
+
+Backtest 2010Q1-2019Q4, initialised on 2010Q1 stocks and 2010-2019 rates
+ band  MAPE_pct    R2
+25-34      2.09 0.924
+35-54      0.61 0.160
+  55+      1.29 0.981
+
+MAPE is the gate. R2 is shown for completeness but is uninformative
+for the 35-54 band, whose level is nearly flat, so variance around its
+own mean is tiny and R2 is harsh regardless of absolute accuracy.
+
+Backtest PASSES at the 15.0% MAPE limit. Projection proceeds.
+
+Projection to 2035, annual means, index 2024 = 100
+           J       M       S  S_per_J
+year                                 
+2024  100.00  100.00  100.00     1.33
+2025  101.64  100.35  101.56     1.33
+2026  103.30  100.70  103.15     1.33
+2027  104.99  101.06  104.77     1.33
+2028  106.71  101.41  106.41     1.33
+2029  108.45  101.77  108.07     1.33
+2030  110.22  102.13  109.76     1.33
+2031  112.03  102.48  111.48     1.33
+2032  113.86  102.84  113.22     1.32
+2033  115.72  103.21  115.00     1.32
+2034  117.62  103.57  116.79     1.32
+2035  118.81  103.80  117.93     1.32
+
+Seniors per junior: 1.33 (2024) -> 1.32 (2035)
+
+NOTE ON THE 'MENTORSHIP VACUUM' PREMISE
+Seniors are not scarce relative to juniors at the aggregate level, so
+a headcount-based mentoring shortage does not bind. The defensible
+claim is that mentor availability per junior changes, not that it
+collapses. A binding shortage would have to be demonstrated at
+occupation level (SOC), which these industry files cannot support.
+The feedback-loop collapse reported in the earlier version is dropped.
+
+Policy levers, evaluated ONE AT A TIME
+                      lever  J_2035  M_2035  S_2035  S_per_J
+            none (baseline)   118.8   103.8   117.9    1.322
+    senior separations -20%   118.8   103.8   198.9    2.230
+     hiring +10%, all bands   208.0   144.5   140.9    0.902
+separations -10%, all bands   199.7   143.1   153.3    1.022
+
+Each row changes exactly one rate, so its effect is attributable.
+The earlier version moved five parameters at once and reported a
+single improvement factor that could not be decomposed.
+
+==============================================================================
+  HEADLINE FINDINGS
+==============================================================================
+1. Senior share of the workforce rose 21.7% -> 29.0% (+0.54 pp/yr).
+2. Replacement Ratio fell 4.77 -> 2.71; crosses 1.0 in 2033 (95% CI 2031-2037).
+3. Manufacturing has the LOWEST separation rate of its peer set (30.8% annualised).
+4. Retirement's share of senior separations fell 81.2% -> 65.5%; job-to-job exits grew +257%.
+5. 31% of separations move to another manufacturing employer in the same region.
+
+==============================================================================
+  SCOPE AND LIMITATIONS
+==============================================================================
+- J2J Origin-Destination covers moves with both endpoints inside the five
+-   states. Out-of-region moves are not observed.
+- ENPersist proxies retirement only for the 55+ group.
+- State-level aggregation masks county and corridor variation.
+- 2020-2021 are shaded in every figure and excluded from calibration.
+- Layer 4 is withheld when it fails its backtest. See the log for the
+-   diagnosis; a failing projection is reported as a failure, not shown.
+- Association only. No causal identification is claimed.
