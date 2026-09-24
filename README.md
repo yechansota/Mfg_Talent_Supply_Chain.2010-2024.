@@ -1,4 +1,5 @@
-# **Manufacturing Talent Supply Chain at Risk**    
+# Manufacturing Talent Supply Chain at Risk
+## Workforce Aging, Replacement Dynamics, and Talent Competition in the U.S. Southeast Manufacturing Sector (2010–2024) 
 <p align="center">
   <strong>Manufacturing Talent Supply Chain at Risk The Mentorship Vacuum, Re-examined: What 15 Years of Federal Data Actually Show A 15-Year Empirical Analysis of the U.S. Southeast </strong><br>
   <em>(2010–2024) (Region: AL · GA · NC · SC · TN)</em><br>
@@ -12,8 +13,6 @@ I have revisited this challenge from a Macro-HR perspective: Talent Supply Chain
 By manually extracting and cleansing 15 years of administrative records (2010–2024) from the U.S. Census Bureau (J2J, QWI), the BLS, and IPEDS, I built a five-layer diagnostic framework. This document reports the second version of that analysis. The first version contained errors of flow direction, geographic filtering, rate units, and unsupported validation claims. Rebuilding it from source reversed two of the original headline findings. Both the corrections and the reversals are documented below, because a diagnostic tool that cannot survive its own audit is not worth deploying.
 
 I initiated this project to provide a data-driven "stress test(What-IF-Scenario)" of our talent supply chain. By synthesizing U.S. Census Bureau (J2J) flows, BLS industry tables, and IPEDS graduate data (2010–2024), I developed a five-layer quantitative risk model to assess the structural integrity of the region's workforce.
-
-While each layer independently signals significant stress, their interaction describes a self-reinforcing collapse mechanism. Without immediate, coordinated intervention, this demographic and competitive shift will fundamentally reshape the region’s manufacturing capacity well before 2040. This analysis serves as a strategic roadmap to identify where our "talent reservoir" is leaking and how we can secure the skilled human capital necessary for the future of the automotive sector.
 
 >
 > | # | Error | Effect |
